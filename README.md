@@ -7,6 +7,8 @@
 This project is the second in a series of 4 projects for CSCI E-15 at the Harvard Extension School, Fall 2015. This particular project is a a password generator that meets the xkcd theoretical comlexity of "44 bits of entropy." Specifically, it uses a word list of the 25 of each of the most common perpositions, verbs, adjectives, and nouns, and a random integer and special character if selected, to compile a random password. The more words, the higher the complexity.
 My thinking in including these specific selections, was to try to create random phrases, rather than a completely random collection of words. Studies have shown that passphrases are easier to remember than passwords, and can still provide the needed level of complexity (given certain additional criteria).
 
+The generator uses PHP GET to create the password, with the majority of the logic residing in a secondary file called logic.php, which is called from teh primary index.php.
+
 The page consists of:
 
 Title - "44 Bits of Entropy" password generator*
@@ -33,3 +35,5 @@ I compiled a list of the 25 most common of each: Prepositions, Verbs, Adjectives
 
 <https://www.englishclub.com/vocabulary/common-nouns-25.htm>
 
+The xkcd comic itself is linked in the page.
+<https://xkcd.com/936/>
