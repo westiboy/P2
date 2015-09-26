@@ -1,9 +1,3 @@
-<?php
-error_reporting(E_ALL);       # Report Errors, Warnings, and Notices
-ini_set('display_errors', 1); # Display errors on page (instead of a log file)
-?>
-<!-- the above code was borrowed from the in class/notes examples for PHP-->
-
 <!DOCTYPE html>
 <html>
 <title>"44 Bits of Entropy" password generator</title>
@@ -13,6 +7,7 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 <style type="text/css">
 	body {
 		text-align: center;
+		background-color: #FFF0D1;
 	}
 	table {
 		width: 100%;
@@ -25,6 +20,10 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 		width: 25%;
 		height: 60px;
 		text-align: center;
+    }
+    #genpassword{
+    	color: #3399FF;
+    	font-size: 150%;
     }
 </style>
 
@@ -44,28 +43,9 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 		and include a numer or character if needed.<br>
 		The form below will help you generate an easy to remember, but very secure, password.<br>
 	</h3>
-	<pre>
-    <?php print_r($_POST); ?>
-    </pre>
-	<pre>
-    <?php print_r($_GET); ?>
-    </pre>
-		<pre>
-    <?php print_r($passWord); ?>
-    </pre>
 	<table>
 		<tr>
-			<td><?php echo implode($passWord);?></td>
-		<!--
-			<td><?php echo $prep_list[array_rand($prep_list)];?></td>
-			<td><?php echo $verb_list[array_rand($verb_list)];?></td>
-			<td><?php echo $adj_list[array_rand($adj_list)];?></td>
-			<td><?php echo $noun_list[array_rand($noun_list)];?></td>
-			<td><?php echo $strARR[0];?></td>
-			<td><?php echo $strARR[1];?></td>
-			<td><?php echo $strARR[2];?></td>
-			<td><?php echo $strARR[3];?></td>
-		-->
+			<td id=genpassword><?php echo implode($passWord);?></td>
 		</tr>
 	</table>
 	<br>
