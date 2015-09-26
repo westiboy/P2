@@ -1,5 +1,5 @@
 <?php
-	#The following arrays make up the 4 blocks of text for the password
+	#The following array makes up the word list for the password
 	$word_list = array(
 		'be',
 		'have',
@@ -107,15 +107,8 @@
 		#culled from https://www.englishclub.com/vocabulary/common-prepositions-25.htm
 	);
 
-
-	$listArray = array(
-		'$verb_list',
-		'$noun_list',
-		'$adj_list',
-		'$prep_list',
-		);
-
-	$spxCHRArray = array(
+	#The following array makes up the special character list for the password
+	$spxCHR_List = array(
 		'~',
 		'!',
 		'@',
@@ -134,72 +127,25 @@
 		'~',
 		);
 
-	$itrArray = array();
+	#defines empty array for the password contents
 	$passWord = array();
-	$strARR = array();
-
-/*
-	for ($i=0; $i < 4; $i++) { 
-		$itrArray[] = rand(0, 24);	
-	};
-
-	$strARR[0] = $prep_list[$itrArray[0]];
-	$strARR[1] = $verb_list[$itrArray[1]];
-	$strARR[2] = $adj_list[$itrArray[2]];
-	$strARR[3] = $noun_list[$itrArray[3]];
-*/
-
-/*
-	example of $_POST array
-	 Array
-		(
-		    [wr_total] => 4
-		    [inc_num] => on
-		    [inc_spchr] => on
-		)
-
-
-	foreach($_GET as $key => $value) {
-		//Check the number of words in the password
-		if($key=='wr_total') {
-			for ($i=0; $i < $value; $i++) { 
-				$passWord[$i] = $word_list[array_rand($word_list)];
-			}
-		if ($key=='inc_num' AND $value=='on') {
-			array_push($passWord,rand(0,9));
-		}
-		if ($key=='inc_num' AND $value=='on') {
-			array_push($passWord,$spxCHRArray[array_rand($spxCHRArray)]);
-		}
-	}
-*/
+	
+	#function to pass through the results of the GET to define the words, and a number and/or special character if selected
+	#for each value in the global GET array perform a check
 	foreach ($_GET as $key => $value) {
-		//array_push($passWord,$value);
+		#for the total word count, push a random number to the password array
 		if ($key == 'wr_total') {
 			for ($i=0; $i <$value ; $i++) { 
 				array_push($passWord,$word_list[array_rand($word_list)]);
 			}
 		}
+		#if the include number box was checked, push a random number to the password array
+		if ($key == 'inc_num') {
+			array_push($passWord,rand(0,9));
+		}
+		#if the include special character box was checked, push a random pecial character from the $spxCHR_List array to the password array
+		if ($key == 'inc_spchr') {
+			array_push($passWord,$spxCHR_List[array_rand($spxCHR_List)]);
+		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ;?>
