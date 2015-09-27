@@ -22,7 +22,8 @@ Form fields to request the number of words,  and whether or notinclude numbers a
 A live link to the xkcd comic which inspired thhe generator.
 
 ##Demo
-TBD
+
+<http://www.screencast.com/t/IMxgs9g6Bj2>
 
 ##External Sources
 I compiled a list of the 25 most common of each: Prepositions, Verbs, Adjectives, and Nouns. The following URLs were the source material:
