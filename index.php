@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <title>"44 Bits of Entropy" password generator</title>
-<head>
-</head>
 
 <style type="text/css">
 	body {
@@ -60,7 +58,7 @@
 	
 		<br>The web comic xkcd has a great explanation of how this works:
 	<div><a href="https://xkcd.com/936/">
-		<img src="https://imgs.xkcd.com/comics/password_strength.png" width="40%">
+		<img src="https://imgs.xkcd.com/comics/password_strength.png" width="40" alt="xkcd Comic on 40 bits of entropy passwords">
 		</a>
 	</div>
 	
